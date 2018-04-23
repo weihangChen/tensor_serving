@@ -5,7 +5,6 @@ RUN pip install numpy
 RUN pip install tensorflow
 RUN pip install tensorflow-serving-api
 
-ADD mnist-client.py mnist-client.py
-ADD mnist_input_data.py mnist_input_data.py
+ADD client.py client.py
 
-ENTRYPOINT [ "python", "mnist-client.py", "--num_tests=1000", "--server=server:9000" ]
+ENTRYPOINT [ "python", "client.py", "--server=server:9000" ]
