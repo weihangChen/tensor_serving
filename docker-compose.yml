@@ -1,17 +1,13 @@
 version: '3'
-services:
-  modelpersist:
-    build: modelpersist
-    container_name: amazing-modelpersist
-    
-  # server:
-  #   build: server
-  #   container_name: amazing-server
-  #   ports:
-  #     - 9000:9000
+services:    
+  server:
+    build: server
+    container_name: amazing-server
+    ports:
+      - 9000:9000
 
-  # client:
-  #   build: client
-  #   container_name: amazing-client
-  #   links:
-  #     - server
+  client:
+    build: client
+    container_name: amazing-client
+    links:
+      - server
