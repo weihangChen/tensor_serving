@@ -1,7 +1,13 @@
 version: '3'
-services:
-  tensor-servig:
-    build: ./
-    container_name: tensor-serving
-    volumes: 
-      - ./images/out:/tensor-serving/images/out
+services:    
+  server:
+    build: server
+    container_name: amazing-server
+    ports:
+      - 9000:9000
+
+  client:
+    build: client
+    container_name: amazing-client
+    links:
+      - server
