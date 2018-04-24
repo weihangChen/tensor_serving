@@ -13,6 +13,7 @@ RUN apt-get update \
 
 WORKDIR /server
 
+
 ADD trained trained
 
 EXPOSE 9000
